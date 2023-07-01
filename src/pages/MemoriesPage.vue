@@ -1,6 +1,10 @@
 <template>
     <base-layout page-title="List all memories">
-       
+            <template v-slot:action-end>
+                <ion-button router-link="/memory/add">
+                    <ion-icon slot="icon-only" :icon="add"></ion-icon>
+                </ion-button>
+            </template>
             <ion-list>
                 <ion-item v-for="memory in memories" 
                                 :router-link="`/memories/${memory.id}`" 
@@ -18,7 +22,8 @@
 </template>
 <script>
 import { useMemoriesStore } from '@/store/index';
-import {IonList, IonItem, IonImg, IonThumbnail,IonLabel} from "@ionic/vue";
+import { add } from 'ionicons/icons'
+import {IonList, IonItem, IonImg, IonThumbnail,IonLabel,IonButton,IonIcon} from "@ionic/vue";
 export default{
     components:{
      
@@ -26,7 +31,9 @@ export default{
         IonItem,
         IonImg,
         IonThumbnail,
-        IonLabel
+        IonLabel,
+        IonButton,
+        IonIcon
     
 
     },
@@ -34,6 +41,11 @@ export default{
         memories(){
             //return this.$store.getters.memories
             return useMemoriesStore().memories;
+        }
+    },
+    data(){
+        return{
+            add
         }
     }
 

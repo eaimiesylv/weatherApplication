@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 export const useMemoriesStore = defineStore({
-    id:'memories',
+    id:'memories_id',
     state(){ 
         return{
             memories:[
@@ -36,6 +36,14 @@ export const useMemoriesStore = defineStore({
             return(memoryId)=>{
                 return state.memories.find(memory=>memory.id===memoryId);
             }; 
+        }
+    },
+    actions: {
+        addMemory(data){
+            //console.log(data);
+            this.memories.unshift(data);
+            //console.log(this.memories);
+            console.log('well received'); 
         }
     }
 })

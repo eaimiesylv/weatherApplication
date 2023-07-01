@@ -7,6 +7,9 @@
             </ion-buttons>
             
             <ion-title>{{pageTitle }}</ion-title>
+            <ion-buttons slot="end">
+                <slot name="action-end"></slot>
+            </ion-buttons>
           </ion-toolbar>
             
         </ion-header>

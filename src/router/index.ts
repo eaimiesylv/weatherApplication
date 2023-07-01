@@ -13,6 +13,10 @@ const routes: Array<RouteRecordRaw> = [
   },{
     path:'/memories/:id',
     component:()=>import('../pages/MemoryDetail.vue')
+  },
+  {
+    path:'/memory/add',
+    component:()=>import('../pages/AddMemory.vue')
   }
 ]
 

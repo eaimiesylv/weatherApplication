@@ -1,6 +1,6 @@
 <template>
     <base-layout :page-title="loaded?loaded.title:'loading'" back-link="/memories">
-       
+            <ion-img :src="loaded.image"></ion-img>
             <ion-list>
                 <ion-item v-if="!loaded">not loaded</ion-item>
                 <ion-item v-else>{{ loaded.description }}</ion-item>
@@ -12,12 +12,13 @@
 </template>
 <script>
 import { useMemoriesStore } from '@/store/index';
-import {IonList, IonItem} from "@ionic/vue";
+import {IonList, IonItem, IonImg} from "@ionic/vue";
 export default{
     components:{
      
         IonList, 
-        IonItem
+        IonItem,
+        IonImg
      },
      data(){
         return {
