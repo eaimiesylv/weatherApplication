@@ -4,7 +4,7 @@ import { createPinia } from "pinia"
 import App from './App.vue'
 import BaseLayout from './components/base/BaseLayout.vue';
 import router from './router';
-import store from './store/index.js';
+
 
 import { IonicVue } from '@ionic/vue';
 
